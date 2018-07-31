@@ -15,7 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   6. Run as admin globaly `npm cache clean -f` 
   7. Install Visual Studio Code from [here](https://code.visualstudio.com) 
   8. Install the `Project Snippets` extension and reload Visual Studio Code
-  9. Run as admin in the folder that you want to contain the project `git clone https://siebendev.visualstudio.com/DefaultCollection/ProjectUrl`
+  9. Run as admin in the folder that you want to contain the project `git clone project-url`
  10. Open the generated folder with Visual Studio Code (File > Open Folder...)
  11. Open terminal and run `npm install`
 
