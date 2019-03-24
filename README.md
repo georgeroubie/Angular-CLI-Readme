@@ -36,7 +36,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## When package.json is changed
  1. Open Project with Visual Studio Code (File > Open Folder...)
- 2. Open terminal and run `rimraf node_modules`  
+ 2. Open terminal and run `rimraf node_modules dist package-lock.json`  
  3. Open terminal and run `npm cache clean -f`  
  4. Open terminal and run `npm install`  
 
@@ -51,7 +51,7 @@ To update Angular CLI to a new version, you must update both the global package 
 
 ### Local project package:  
  1. Open Project with Visual Studio Code (File > Open Folder...)
- 2. Open terminal and run `rimraf node_modules dist`    
+ 2. Open terminal and run `rimraf node_modules dist package-lock.json`     
  3. Open terminal and run `npm install --save-dev @angular/cli@latest`  
  4. Open terminal and run `npm install`  
 
@@ -65,26 +65,27 @@ To update Angular CLI to a new version, you must update both the global package 
 If you want the module to have routing add the flag `--routing`
 
 ### Create Component
-`ng g c folderOfModule/name --spec true -d`  
+`ng g c folderOfModule/name --skipTests=false -d`  
 If you don't want the component to have it's own folder add the flag `--flat`   
-If you don't want the component to have a scss file add the flag `--is`  
+If you don't want the component to have a scss file add the flag `--inlineStyle=true`  
+If the module that you want create the component, is the SharedModule, don't forget to add the flag `--export=true`  
 
 ### Create Service
-`ng g s core/providers/services/name --spec true -d`  
+`ng g s core/providers/services/name --skipTests=false -d`  
 
 ### Create Guard
-`ng g g core/providers/guards/name --spec true -d`  
+`ng g g core/providers/guards/name --skipTests=false -d`  
 
 ### Create Factory
-`ng g s core/providers/factories/nameFactory --spec true -d`  
+`ng g s core/providers/factories/nameFactory --skipTests=false -d`  
 You have to delete the word Service from the class name, but not from the file name.
 
 ### Create Utility
-`ng g s core/providers/utilities/nameUtility --spec true -d`  
+`ng g s core/providers/utilities/nameUtility --skipTests=false -d`  
 You have to delete the word Service from the class name, but not from the file name.
 
 ### Create Pipe
-`ng g p common/pipes/name --spec true -d`  
+`ng g p common/pipes/name --skipTests=false --export=true -d`  
 
 ### Create Interface
 `ng g i core/interfaces/name -d`  
