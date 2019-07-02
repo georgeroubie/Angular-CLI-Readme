@@ -15,9 +15,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   6. Run as admin globaly `npm cache clean -f` 
   7. Install Visual Studio Code from [here](https://code.visualstudio.com) 
   8. Install the `Project Snippets` extension and reload Visual Studio Code
-  9. Run as admin in the folder that you want to contain the project `git clone project-url`
- 10. Open the generated folder with Visual Studio Code (File > Open Folder...)
- 11. Open terminal and run `npm install`
+  9. Install the `#region folding for VS Code` extension and reload Visual Studio Code
+ 10. Install the `EditorConfig for VS Code` extension and reload Visual Studio Code
+ 11. Run as admin in the folder that you want to contain the project `git clone project-url`
+ 12. Open the generated folder with Visual Studio Code (File > Open Folder...)
+ 13. Open terminal and run `npm install`
 
 
 ## Run
@@ -26,12 +28,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  3. On the left side run `npm start` and automatically the browser will navigate to `http://localhost:YYY1`
  4. On the right side run `npm run test` to execute the unit tests and automatically the browser will navigate to `http://localhost:YYY2`
 
-
-## See the source map files
+## Publish
  1. Open Project with Visual Studio Code (File > Open Folder...)
- 2. Open terminal and run `ng build -sm` to build and adding source map files
- 3. View the source map files with this command: `source-map-explorer dist/name.js`
- 4. When you are finished do not commit anything just delete the dist folder
+ 2. Git Sync  
+ 3. Open terminal and run `npm run test`
+ 4. Open terminal and run `npm run build`   
+ 5. Write here the next step based on the project
+
+## Format code
+ 1. Install the `EditorConfig for VS Code` extension and reload Visual Studio Code
+ 2. Use these keys inside a file: `Shift` + `Alt` + `F`
+
+
+## Use comment region
+ 1. Install the `#region folding for VS Code` extension and reload Visual Studio Code
+ 2. Select the code you want
+ 3. Use these keys: `Ctrl` + `M` + `R`
 
 
 ## When package.json is changed
@@ -60,38 +72,51 @@ To update Angular CLI to a new version, you must update both the global package 
  1. When you run an angular cli command you should use the flag `-d` for testing the result.  
  2. When you are sure that the result of the command is correct, then remove the `-d` flag.
 
-### Create Module
-`ng g m name -d`  
-If you want the module to have routing add the flag `--routing`
+### Create Feature Module
+ 1. Run: `ng g m main/name --routing -d`  
+ 2. Lazyload the module in the `src/main/main-routing.module.ts` like this: `{ path: 'name', loadChildren: './name/name.module#NameModule' }`
 
-### Create Component
-`ng g c folderOfModule/name --skipTests=false -d`  
-If you don't want the component to have it's own folder add the flag `--flat`   
-If you don't want the component to have a scss file add the flag `--inlineStyle=true`  
-If the module that you want create the component, is the SharedModule, don't forget to add the flag `--export=true`  
+### Create Component in a Feature Module
+ 1. Run: `ng g c main/featureModuleName/name --skipTests=true -d`    
+    If you don't want the component to have it's own folder add the flag `--flat`     
+    If you don't want the component to have a scss file add the flag `--inlineStyle=true`  
 
 ### Create Service
-`ng g s core/providers/services/name --skipTests=false -d`  
-
-### Create Guard
-`ng g g core/providers/guards/name --skipTests=false -d`  
-
-### Create Factory
-`ng g s core/providers/factories/nameFactory --skipTests=false -d`  
-You have to delete the word Service from the class name, but not from the file name.
+ 1. Run: `ng g s core/services/name --skipTests=true -d`  
+ 2. Remove the `providedIn: 'root'` from the service
+ 2. Add the service in the providers array of the CoreModule
 
 ### Create Utility
-`ng g s core/providers/utilities/nameUtility --skipTests=false -d`  
-You have to delete the word Service from the class name, but not from the file name.
+ 1. Run: `ng g s core/utilities/nameUtility --skipTests=true -d`  
+ 2. Delete the word Service from the class name, but not from the file name.
+ 3. Remove the `providedIn: 'root'` from the utility
+ 4. Add the utility in the providers array of the CoreModule
 
-### Create Pipe
-`ng g p common/pipes/name --skipTests=false --export=true -d`  
+### Create Factory
+ 1. Run: `ng g s core/factories/nameFactory --skipTests=true -d`
+ 2. Delete the word Service from the class name, but not from the file name.
+ 3. Remove the `providedIn: 'root'` from the factory
+ 4. Add the factory in the providers array of the CoreModule
 
-### Create Interface
-`ng g i core/interfaces/name -d`  
+### Create Guard
+ 1. Run: `ng g g core/guards/name --skipTests=true -d`
+ 2. Remove the `providedIn: 'root'` from the guard
+ 3. Add the guard in the providers array of the CoreModule
 
-### Create Class
-`ng g cl core/classes/name -d`  
+### Create Shared Component
+ 1. Run `ng g c shared/components/name --skipTests=true --export=true -d`  
+    If you don't want the component to have a scss file add the flag `--inlineStyle=true`  
+ 2. Add the component shortcut in the `.vscode/snippets/html.json` in order to easily use it everywhere
 
-### Create Enum
-`ng g e core/enums/name -d`  
+### Create Shared Pipe
+ 1. Run: `ng g p shared/pipes/name --skipTests=true --export=true -d`  
+
+### Create a Class that every module can use
+ 1. Run: `ng g cl shared/classes/name -d`  
+
+### Create an Interface that every module can use
+ 1. Run: `ng g i shared/interfaces/name -d`  
+ 2. Add the letter `I` in the beginning of the interface name not in the file name.
+
+### Create an Enum  that every module can use
+ 1. Run: `ng g e shared/enums/name -d`  
