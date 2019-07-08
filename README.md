@@ -28,12 +28,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  3. On the left side run `npm start` and automatically the browser will navigate to `http://localhost:YYY1`
  4. On the right side run `npm run test` to execute the unit tests and automatically the browser will navigate to `http://localhost:YYY2`
 
+
 ## Publish
  1. Open Project with Visual Studio Code (File > Open Folder...)
  2. Git Sync  
  3. Open terminal and run `npm run test`
  4. Open terminal and run `npm run build`   
  5. Write here the next step based on the project
+
 
 ## Format code
  1. Install the `EditorConfig for VS Code` extension and reload Visual Studio Code
@@ -72,14 +74,18 @@ To update Angular CLI to a new version, you must update both the global package 
  1. When you run an angular cli command you should use the flag `-d` for testing the result.  
  2. When you are sure that the result of the command is correct, then remove the `-d` flag.
 
+### Create Component in Main Module
+ 1. Run: `ng g c main/components/name --skipTests=true --inlineStyle=true -d`
+
 ### Create Feature Module
- 1. Run: `ng g m main/name --routing -d`  
- 2. Lazyload the module in the `src/main/main-routing.module.ts` like this: `{ path: 'name', loadChildren: './name/name.module#NameModule' }`
+ 1. Run: `ng g m main/modules/name --routing -d`  
+ 2. Lazyload the module in the `src/main/main-routing.module.ts` like this: `{ path: 'name', loadChildren: './modules/name/name.module#NameModule' }`
+ 3. Import the `SharedModule` in the created module and remove any used module import, e.g. CommonModule
 
 ### Create Component in a Feature Module
- 1. Run: `ng g c main/featureModuleName/name --skipTests=true -d`    
-    If you don't want the component to have it's own folder add the flag `--flat`     
-    If you don't want the component to have a scss file add the flag `--inlineStyle=true`  
+ 1. Run: `ng g c main/modules/featureModuleName/name --skipTests=true --inlineStyle=true -d`    
+    If you don't want the component to have it's own folder add the flag `--flat`
+ 2. Add the component, in the routes object of the file: `src/main/modules/featureModuleName/featureModuleName-routing.ts`
 
 ### Create Service
  1. Run: `ng g s core/services/name --skipTests=true -d`  
@@ -104,8 +110,7 @@ To update Angular CLI to a new version, you must update both the global package 
  3. Add the guard in the providers array of the CoreModule
 
 ### Create Shared Component
- 1. Run `ng g c shared/components/name --skipTests=true --export=true -d`  
-    If you don't want the component to have a scss file add the flag `--inlineStyle=true`  
+ 1. Run `ng g c shared/components/name --skipTests=true --export=true --inlineStyle=true -d`
  2. Add the component shortcut in the `.vscode/snippets/html.json` in order to easily use it everywhere
 
 ### Create Shared Pipe
