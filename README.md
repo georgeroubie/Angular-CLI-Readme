@@ -9,10 +9,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Installation
   1. Install git from [here](https://git-scm.com/download/win)
   2. Install node js from [here](https://nodejs.org/en/download)
-  3. Run as admin globaly `npm install npm@latest -g`  
-  4. Run as admin globaly `npm install @angular/cli@X.X.X -g`  
-  5. Run as admin globaly `npm install rimraf -g`  
-  6. Run as admin globaly `npm cache clean -f` 
+  3. Run as admin globally `npm install npm@latest -g`  
+  4. Run as admin globally `npm install @angular/cli@X.X.X -g`  
+  5. Run as admin globally `npm install rimraf -g`  
+  6. Run as admin globally `npm cache clean -f` 
   7. Install Visual Studio Code from [here](https://code.visualstudio.com) 
   8. Install the `Project Snippets` extension and reload Visual Studio Code
   9. Install the `#region folding for VS Code` extension and reload Visual Studio Code
@@ -59,9 +59,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 To update Angular CLI to a new version, you must update both the global package and your project's local package.  
 
 ### Global package:  
- 1. Run as admin globaly `npm uninstall -g @angular/cli`  
- 2. Run as admin globaly `npm cache clean -f`  
- 3. Run as admin globaly `npm install -g @angular/cli@latest`  
+ 1. Run as admin globally `npm uninstall -g @angular/cli`  
+ 2. Run as admin globally `npm cache clean -f`  
+ 3. Run as admin globally `npm install -g @angular/cli@latest`  
 
 ### Local project package:  
  1. Open Project with Visual Studio Code (File > Open Folder...)
