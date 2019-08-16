@@ -1,5 +1,5 @@
 # Angular CLI Readme
-This is the readme file that I created for the Frond-End Dept. of [Pobuca](https://pobuca.com), in order to use it in every Angular CLI Project.
+> This is the readme file that Pobuca uses in every Angular CLI Project.
 
 # General information
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version X.X.X
