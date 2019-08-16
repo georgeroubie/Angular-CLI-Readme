@@ -1,7 +1,6 @@
 # Angular CLI Readme
 This is the readme file that I created for the Frond-End Dept. of [Pobuca](https://pobuca.com), in order to use it in every Angular CLI Project.
 
-
 # General information
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version X.X.X
 
@@ -9,17 +8,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Installation
   1. Install git from [here](https://git-scm.com/download/win)
   2. Install node js from [here](https://nodejs.org/en/download)
-  3. Run as admin globally `npm install npm@latest -g`  
-  4. Run as admin globally `npm install @angular/cli@X.X.X -g`  
-  5. Run as admin globally `npm install rimraf -g`  
-  6. Run as admin globally `npm cache clean -f` 
-  7. Install Visual Studio Code from [here](https://code.visualstudio.com) 
-  8. Install the `Project Snippets` extension and reload Visual Studio Code
-  9. Install the `#region folding for VS Code` extension and reload Visual Studio Code
- 10. Install the `EditorConfig for VS Code` extension and reload Visual Studio Code
- 11. Run as admin in the folder that you want to contain the project `git clone project-url`
- 12. Open the generated folder with Visual Studio Code (File > Open Folder...)
- 13. Open terminal and run `npm install`
+  3. Run as admin globally:   
+     + `npm install npm@latest -g`  
+	   + `npm install @angular/cli@8.2.0 -g` 
+	   + `npm install rimraf -g` 
+	   + `npm cache clean -f` 
+  4. Install Visual Studio Code from [here](https://code.visualstudio.com) 
+  5. Install these Visual Studio Code extensions:   
+     + `Project Snippets`
+	   + `#region folding for VS Code`
+	   + `EditorConfig for VS Code`
+	   + `stylelint`
+	   + `Azure Account`
+	   + `Azure App Service`
+  6. Run as admin in the folder that you want to contain the project `git clone project-url`
+  7. Open the generated folder with Visual Studio Code (File > Open Folder...)
+  8. Open terminal and run `npm install`
 
 
 ## Run
@@ -29,12 +33,27 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  4. On the right side run `npm run test` to execute the unit tests and automatically the browser will navigate to `http://localhost:YYY2`
 
 
-## Publish
- 1. Open Project with Visual Studio Code (File > Open Folder...)
- 2. Git Sync  
+## Publish to Production
+The running url is: https://angularwebapp.azurewebsites.net  
+ 1. Open `master` branch
+ 2. Merge `development` branch to `master`
  3. Open terminal and run `npm run test`
- 4. Open terminal and run `npm run build`   
- 5. Write here the next step based on the project
+ 4. Open terminal and run `npm run build`, this action will generate a dist folder
+ 5. Open `Azure: APP SERVICE` Visual Studio Code Extension
+ 6. Got to `Web Services` > `angularwebapp`, right click to `angularwebapp` and choose `Deploy to Web App...`
+ 7. On File Explorer choose the dist folder
+ 8. Delete local dist folder
+
+
+## Publish to Development
+The running url is: https://angularwebapp-dev.azurewebsites.net  
+ 1. Open `development` branch
+ 2. Open terminal and run `npm run test`
+ 3. Open terminal and run `npm run build`, this action will generate a dist folder
+ 4. Open Azure: APP SERVICE Visual Studio Code Extension
+ 5. Got to `Web Services` > `angularwebapp > Deployment Slots > dev`, right click to `dev` and choose `Deploy to Slot...`
+ 6. On File Explorer choose the dist folder
+ 7. Delete local dist folder
 
 
 ## Format code
@@ -55,21 +74,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  4. Open terminal and run `npm install`  
 
 
-## When Angular CLI needs update
-To update Angular CLI to a new version, you must update both the global package and your project's local package.  
-
-### Global package:  
- 1. Run as admin globally `npm uninstall -g @angular/cli`  
- 2. Run as admin globally `npm cache clean -f`  
- 3. Run as admin globally `npm install -g @angular/cli@latest`  
-
-### Local project package:  
- 1. Open Project with Visual Studio Code (File > Open Folder...)
- 2. Open terminal and run `rimraf node_modules dist package-lock.json`     
- 3. Open terminal and run `npm install --save-dev @angular/cli@latest`  
- 4. Open terminal and run `npm install`  
-
-
 ## Angular CLI Commands
  1. When you run an angular cli command you should use the flag `-d` for testing the result.  
  2. When you are sure that the result of the command is correct, then remove the `-d` flag.
@@ -79,7 +83,8 @@ To update Angular CLI to a new version, you must update both the global package 
 
 ### Create Feature Module
  1. Run: `ng g m main/modules/name --routing -d`  
- 2. Lazyload the module in the `src/main/main-routing.module.ts` like this: `{ path: 'name', loadChildren: './modules/name/name.module#NameModule' }`
+ 2. Lazyload the module in the `src/main/main-routing.module.ts` like this:  
+    `{ path: 'name', loadChildren: () => import('./modules/name/name.module').then(m => m.NameModule) }`
  3. Import the `SharedModule` in the created module and remove any used module import, e.g. CommonModule
 
 ### Create Component in a Feature Module
