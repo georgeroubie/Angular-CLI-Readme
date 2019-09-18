@@ -1,6 +1,7 @@
 # Angular CLI Readme
 > This is the readme file that [Pobuca](https://www.pobuca.com) uses in every Angular CLI Project.
 
+
 # General information
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version X.X.X
 
@@ -10,16 +11,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  2. Install node js from [here](https://nodejs.org/en/download)
  3. Run as admin globally:   
     + `npm install npm@latest -g`  
-    + `npm install @angular/cli@8.2.0 -g` 
+	+ `npm install @angular/cli@8.2.0 -g` 
     + `npm install rimraf -g` 
-    + `npm cache clean -f` 
+	+ `npm cache clean -f` 
  4. Install Visual Studio Code from [here](https://code.visualstudio.com) 
  5. Install these Visual Studio Code extensions:   
     + `Project Snippets`
-    + `#region folding for VS Code`
-    + `EditorConfig for VS Code`
-    + `stylelint`
-    + `Azure App Service`
+	+ `#region folding for VS Code`
+	+ `EditorConfig for VS Code`
+	+ `stylelint`
+	+ `Azure Account`
+	+ `Azure App Service`
  6. Run as admin in the folder that you want to contain the project `git clone project-url`
  7. Open the generated folder with Visual Studio Code (File > Open Folder...)
  8. Open terminal and run `npm install`
@@ -36,23 +38,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 The running url is: https://angularwebapp.azurewebsites.net  
  1. Open `master` branch
  2. Merge `development` branch to `master`
- 3. Open terminal and run `npm run test`
- 4. Open terminal and run `npm run build`, this action will generate a dist folder
- 5. Open `Azure: APP SERVICE` Visual Studio Code Extension
- 6. Got to `Web Services` > `angularwebapp`, right click to `angularwebapp` and choose `Deploy to Web App...`
- 7. On File Explorer choose the dist folder
- 8. Delete local dist folder
+ 3. Open terminal and run `npm run build`, this action will generate a dist folder
+ 4. Open `Azure: APP SERVICE` Visual Studio Code Extension
+ 5. Got to `Web Services` > `angularwebapp`, right click to `angularwebapp` and choose `Deploy to Web App...`
+ 6. On File Explorer choose the dist folder
+ 7. Delete local dist folder
 
 
 ## Publish to Development
 The running url is: https://angularwebapp-dev.azurewebsites.net  
  1. Open `development` branch
- 2. Open terminal and run `npm run test`
- 3. Open terminal and run `npm run build`, this action will generate a dist folder
- 4. Open Azure: APP SERVICE Visual Studio Code Extension
- 5. Got to `Web Services` > `angularwebapp > Deployment Slots > dev`, right click to `dev` and choose `Deploy to Slot...`
- 6. On File Explorer choose the dist folder
- 7. Delete local dist folder
+ 2. Open terminal and run `npm run build`, this action will generate a dist folder
+ 3. Open Azure: APP SERVICE Visual Studio Code Extension
+ 4. Got to `Web Services` > `angularwebapp > Deployment Slots > dev`, right click to `dev` and choose `Deploy to Slot...`
+ 5. On File Explorer choose the dist folder
+ 6. Delete local dist folder
 
 
 ## Format code
