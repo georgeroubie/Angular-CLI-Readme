@@ -77,6 +77,17 @@ The running url is: https://angularwebapp-dev.azurewebsites.net
  1. When you run an angular cli command you should use the flag `-d` for testing the result.  
  2. When you are sure that the result of the command is correct, then remove the `-d` flag.
 
+### Create Module
+ 1. Run: `ng g m name --routing -d`  
+ 2. Import the module in the `AppModule`
+ 3. Check for routing issues with other modules
+ 4. Import the `SharedModule` in the created module and remove any used module import, e.g. CommonModule
+
+### Create Component in Module
+ 1. Run: `ng g c moduleName/name --skipTests=true --inlineStyle=true -d`    
+    If you don't want the component to have it's own folder add the flag `--flat`
+ 2. Add the component, in the routes object of the file: `src/moduleName/moduleName-routing.ts`
+
 ### Create Component in Main Module
  1. Run: `ng g c main/components/name --skipTests=true --inlineStyle=true -d`
 
