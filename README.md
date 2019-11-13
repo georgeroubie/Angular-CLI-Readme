@@ -94,7 +94,7 @@ The running url is: https://angularwebapp-dev.azurewebsites.net
 ### Create Feature Module
  1. Run: `ng g m main/modules/name --routing -d`  
  2. Lazyload the module in the `src/main/main-routing.module.ts` like this:  
-    `{ path: 'name', loadChildren: () => import('./modules/name/name.module').then(m => m.NameModule) }`
+    `{ path: 'name', loadChildren: () => import('./modules/name/name.module').then((m) => m.NameModule) }`
  3. Import the `SharedModule` in the created module and remove any used module import, e.g. CommonModule
 
 ### Create Component in a Feature Module
