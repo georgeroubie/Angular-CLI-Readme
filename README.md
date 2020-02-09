@@ -35,24 +35,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 ## Publish to Production
-The running url is: https://angularwebapp.azurewebsites.net  
- 1. Open `master` branch
- 2. Merge `development` branch to `master`
- 3. Open terminal and run `npm run build`, this action will generate a dist folder
- 4. Open `Azure: APP SERVICE` Visual Studio Code Extension
- 5. Got to `Web Services` > `angularwebapp`, right click to `angularwebapp` and choose `Deploy to Web App...`
- 6. On File Explorer choose the dist folder
- 7. Delete local dist folder
-
-
-## Publish to Development
-The running url is: https://angularwebapp-dev.azurewebsites.net  
- 1. Open `development` branch
- 2. Open terminal and run `npm run build`, this action will generate a dist folder
- 3. Open Azure: APP SERVICE Visual Studio Code Extension
- 4. Got to `Web Services` > `angularwebapp > Deployment Slots > dev`, right click to `dev` and choose `Deploy to Slot...`
- 5. On File Explorer choose the dist folder
- 6. Delete local dist folder
+Test the application to staging environment and then swap staging with production to Azure Portal.
 
 
 ## Format code
