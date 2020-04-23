@@ -11,17 +11,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  2. Install node js from [here](https://nodejs.org/en/download)
  3. Run as admin globally:   
     + `npm install npm@latest -g`  
-	+ `npm install @angular/cli@8.2.0 -g` 
+    + `npm install @angular/cli@X.X.X -g` 
     + `npm install rimraf -g` 
-	+ `npm cache clean -f` 
+    + `npm cache clean -f` 
  4. Install Visual Studio Code from [here](https://code.visualstudio.com) 
  5. Install these Visual Studio Code extensions:   
     + `Project Snippets`
-	+ `#region folding for VS Code`
-	+ `EditorConfig for VS Code`
-	+ `stylelint`
-	+ `Azure Account`
-	+ `Azure App Service`
+    + `#region folding for VS Code`
+    + `EditorConfig for VS Code`
+    + `stylelint-plus`
+    + `TSLint`
+    + `Azure Account`
+    + `Azure App Service`
  6. Run as admin in the folder that you want to contain the project `git clone project-url`
  7. Open the generated folder with Visual Studio Code (File > Open Folder...)
  8. Open terminal and run `npm install`
